@@ -1,14 +1,17 @@
-{% extends 'base.html' %} {% block content %}
+<div class="p-10">
+  {% extends 'base.html' %} {% block content %}
+  <h1 class="text-[40px] mb-10">La boutique en ligne</h1>
 
-<h1>La boutique en ligne</h1>
-
-{% for product in products %}
-<h1>{{ product.name }}</h1>
-<img
-  src="{{ product.thumbnail.url }}"
-  alt="{{ product.name }}"
-  style="max-width: 250px"
-/>
-<p>{{ product.price }} €</p>
-<p>{{ product.description }}</p>
-{% endfor%} {% endblock content %}
+  {% for product in products %}
+  <div class="flex flex-col mb-10">
+    <span class="text-red">{{ product.name }}</span>
+    <img
+      src="{{ product.thumbnail.url }}"
+      alt="{{ product.name }}"
+      style="max-width: 250px"
+    />
+    <p>{{ product.price }} €</p>
+    <p>{{ product.description }}</p>
+  </div>
+  {% endfor%} {% endblock content %}
+</div>
